@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Connect 4 Game</title>
+  </head>
+  <body onload="init()">
+    <script src="./metamask.js"></script>
+    <script src="./Connect4.js"></script>
+    <h4> Connect 4 Game - Ana Maria Anghel</h4>
+
+    <p>
+      Enter contract address <input id="contractAddress" type="text" size="117">
+    </p>
+    <p>
+      <input id="joinGame" type="button" value="Join Game">
+    <div>
+    <button id="button0" style="height:100px;width:105px">
+        <svg width="100" height="100">
+            <circle cx="45" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="#78A721"
+            />
+        </svg>
+    </button>
+    <button id="button1" style="height:100px;width:103px">
+        <svg width="100" height="100">
+            <circle cx="45" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="#78A721"
+            />
+        </svg>
+    </button>
+
+    <button id="button2" style="height:100px;width:100px">
+        <svg width="100" height="100">
+            <circle cx="40" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="#78A721"
+            />
+        </svg>
+    </button>
+
+    <button id="button3" style="height:100px;width:100px">
+        <svg width="100" height="100">
+            <circle cx="40" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="#78A721"
+            />
+        </svg>
+    </button>
+
+    <button id="button4" style="height:100px;width:105px">
+        <svg width="100" height="100">
+            <circle cx="45" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="#78A721"
+            />
+        </svg>
+    </button>
+
+    <button id="button5" style="height:100px;width:103px">
+        <svg width="100" height="100">
+            <circle cx="45" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="#78A721"
+            />
+        </svg>
+    </button>
+
+    <button id="button6" style="height:100px;width:105px">
+        <svg width="100" height="100">
+            <circle cx="40" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="#78A721"
+            />
+        </svg>
+    </button>
+
+    <table border="1">
+      <tr>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell0"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell1"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell2"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell3"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell4"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell5"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell6"
+                />
+            </svg>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell7"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell8"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell9"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell10"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell11"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell12"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell13"
+                />
+            </svg>
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell14"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell15"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell16"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell17"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell18"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell19"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell20"
+                />
+            </svg>
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell21"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell22"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell23"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell24"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell25"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell26"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell27"
+                />
+            </svg>
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell28"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell29"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell30"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell31"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell32"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell33"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell34"
+                />
+            </svg>
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell35"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell36"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell37"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell38"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell39"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell40"
+                />
+            </svg>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="30" stroke="#121E69" stroke-width="2" fill="white" id="cell41"
+                />
+            </svg>
+        </td>
+      </tr>
+    </table>
+    
+
+    
+    <p>
+      Start webserver in the directory with these files using: 
+      <tt>python3 -m http.server 8080</tt>
+    </p>
+  </body>
+</html>
+
