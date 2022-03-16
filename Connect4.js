@@ -1,4 +1,3 @@
-/////Ana Maria Anghel//////
 
 
 function getInstance () {
